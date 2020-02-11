@@ -15,6 +15,10 @@ public void draw()
 	drawBranches(320, 380, 100, 3*Math.PI/2); 
 
 } 
+public void mousePressed()
+{
+	redraw();
+}
 public void drawBranches(int x,int y, double branchLength, double angle) 
 {   
 	//your code here
@@ -28,7 +32,7 @@ public void drawBranches(int x,int y, double branchLength, double angle)
 	line(x,y,endX1,endY1);
 	line(x,y,endX2,endY2);
 	if (branchLength >= smallestBranch){
-		stroke(25,(int)(Math.random()*255),(int)(Math.random()*255));
+		stroke((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
 		drawBranches(endX1,endY1,branchLength,ang1);
 		drawBranches(endX2,endY2,branchLength,ang2);
 	}
